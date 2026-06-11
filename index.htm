@@ -25,264 +25,263 @@
     <header class="flex justify-between items-center bg-slate-900/80 backdrop-blur border border-slate-800 rounded-2xl p-4 mb-4">
         <div>
             <h1 class="text-xl font-black text-white tracking-tight">ENGLISH CORE</h1>
-            <p class="text-[10px] text-blue-400 font-bold uppercase tracking-widest">Self-Study Program</p>
+            <p class="text-[10px] text-blue-400 font-bold uppercase tracking-widest">Nazorat va Taymer Markazi</p>
         </div>
-        <div class="flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-orange-600 px-3 py-1.5 rounded-xl shadow-lg shadow-orange-500/20 animate-pulse">
-            <span class="text-base">🔥</span>
-            <span class="font-extrabold text-white text-sm">Streak: <span id="streak-display">0</span> Kun</span>
+        <div class="text-right">
+            <span class="text-[9px] font-bold text-slate-400 uppercase block">Umumiy Bugun:</span>
+            <span id="total-time-display" class="font-extrabold text-emerald-400 text-sm">00:00:00</span>
         </div>
     </header>
 
-    <section class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-4 mb-4 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl"></div>
-        <div class="flex items-center gap-2 mb-1.5">
-            <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
-            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Bugun Senda Dinamik Target</span>
+    <section id="study-studio" class="hidden bg-slate-950 border border-slate-800 rounded-2xl p-4 mb-4 transition-all duration-300">
+        <div class="flex justify-between items-center mb-3">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
+                <span id="studio-block-title" class="text-xs font-bold text-white uppercase tracking-wider">Jonli Dars Jarayoni</span>
+            </div>
+            <div id="studio-timer" class="text-xl font-mono font-black text-amber-400 tracking-wider">00:00</div>
         </div>
-        <h2 id="today-title" class="text-lg font-black text-white mb-1">Yuklanmoqda...</h2>
-        <p id="today-desc" class="text-xs text-slate-400 leading-relaxed mb-3">Vazifalar yuklanmoqda, iltimos kuting...</p>
-        
-        <div id="today-resource-box" class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3 text-xs">
-            <span class="text-[10px] text-amber-400 font-bold uppercase tracking-wider block mb-1.5">🎯 Bugungi Material:</span>
-            <div id="today-links" class="flex flex-wrap gap-2"></div>
+
+        <div class="w-full h-48 bg-slate-900 border border-slate-800 rounded-xl overflow-hidden mb-3 flex flex-col justify-center items-center relative">
+            <iframe id="studio-frame" class="w-full h-full hidden" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div id="frame-placeholder" class="text-center p-4">
+                <p class="text-xs text-slate-400 mb-2">Ushbu platforma xavfsizlik qoidalari tufayli ichki oynada ochilmadi. Quyidagi tugma orqali to'g'ridan-to'g'ri o'ting va darsni bajaring. Taymer sizni kuzatishda davom etadi!</p>
+            </div>
+        </div>
+
+        <div class="flex gap-2">
+            <a id="studio-direct-link" href="#" target="_blank" class="flex-1 bg-slate-800 hover:bg-slate-700 text-center text-white text-xs font-bold py-2 rounded-lg transition border border-slate-700">Materialni Ochish ↗️</a>
+            <button onclick="stopStudySession()" class="bg-red-600 hover:bg-red-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition active:scale-95">Blokni Tugatish</button>
         </div>
     </section>
 
-    <section id="timer-panel" class="hidden bg-slate-950 border-2 border-dashed border-slate-800 rounded-2xl p-5 text-center mb-5 transition-all duration-300">
-        <span id="timer-badge" class="text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider mb-2 inline-block"></span>
-        <div id="timer-clock" class="text-5xl font-black text-white tracking-widest my-1 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">00:00</div>
-        <p class="text-[10px] text-amber-400 font-medium flex items-center justify-center gap-1">
-            <span>⚡</span> FOCUS MODE: Bildirishnomalarni o'chiring! Samara 80% oshadi.
-        </p>
+    <section class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-4 mb-4">
+        <div class="flex items-center gap-2 mb-1.5">
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Bugungi Target:</span>
+        </div>
+        <h2 id="today-title" class="text-lg font-black text-white mb-1">Yuklanmoqda...</h2>
+        <p id="today-desc" class="text-xs text-slate-400 leading-relaxed">Kunlik dars rejangiz tayyorlanmoqda...</p>
     </section>
 
     <main class="space-y-4 mb-6">
         
-        <div id="block1" class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-4 transition-all duration-300 relative">
+        <div id="block1" class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-4 transition-all duration-300">
             <div class="flex justify-between items-start mb-2">
                 <div>
-                    <span class="text-[10px] font-bold text-blue-400 uppercase tracking-wider">1-Blok • 30 daqiqa</span>
-                    <h3 class="text-white font-bold text-base mt-0.5">Baza va So'z Boyligi</h3>
+                    <span class="text-[10px] font-bold text-blue-400 uppercase tracking-wider">1-Blok • Target: 30 min [cite: 6]</span>
+                    <h3 class="text-white font-bold text-base mt-0.5">Baza va So'z Boyligi [cite: 6]</h3>
                 </div>
                 <span id="b1-badge" class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-semibold">Kutilmoqda</span>
             </div>
-            <p class="text-xs text-slate-400 leading-relaxed mb-3">Grammatika va iboralar. Yangi so'zlarni Quizlet yordamida yodlash. Pastdagi tugmalar orqali Quizlet platformasiga tezkor o'ting:</p>
-            
-            <div class="grid grid-cols-3 gap-1.5 mb-3 text-[10px] text-center">
-                <a href="https://quizlet.com/" target="_blank" class="bg-slate-950 border border-slate-800 rounded-lg p-1.5 text-blue-400 font-medium hover:bg-slate-900 transition">🌐 Sayt</a>
-                <a href="https://play.google.com/store/apps/details?id=com.quizlet.quizletandroid" target="_blank" class="bg-slate-950 border border-slate-800 rounded-lg p-1.5 text-slate-400 font-medium hover:bg-slate-900 transition">🤖 Android</a>
-                <a href="https://apps.apple.com/us/app/apple-podcasts/id525451387" target="_blank" class="bg-slate-950 border border-slate-800 rounded-lg p-1.5 text-slate-400 font-medium hover:bg-slate-900 transition">🍏 iOS</a>
-            </div>
-
-            <button onclick="activateTimer(30, 'block1', 'bg-blue-500/20 text-blue-400 border-blue-500', 'neon-blue')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition shadow-lg shadow-blue-600/20 active:scale-[0.98]">Blokni Boshlash</button>
+            <p id="b1-text" class="text-xs text-slate-400 leading-relaxed mb-3">Yuklanmoqda...</p>
+            <button id="b1-btn" onclick="startStudySession(1)" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition active:scale-95 shadow-lg shadow-blue-600/10">Blokni Boshlash</button>
         </div>
 
         <div id="block2" class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-4 transition-all duration-300">
             <div class="flex justify-between items-start mb-2">
                 <div>
-                    <span class="text-[10px] font-bold text-purple-400 uppercase tracking-wider">2-Blok • 30 daqiqa</span>
-                    <h3 class="text-white font-bold text-base mt-0.5">Native Nutqini Tinglash</h3>
+                    <span class="text-[10px] font-bold text-purple-400 uppercase tracking-wider">2-Blok • Target: 30 min [cite: 6]</span>
+                    <h3 class="text-white font-bold text-base mt-0.5">Native Nutqini Tinglash [cite: 6]</h3>
                 </div>
                 <span id="b2-badge" class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-semibold">Kutilmoqda</span>
             </div>
-            <p class="text-xs text-slate-400 leading-relaxed mb-3">Jonli ingliz tili, talaffuz va ohanglar. Har kunlik podkastlarni qulay eshitish uchun sevimli ilovangizni tanlang:</p>
-            
-            <div class="grid grid-cols-4 gap-1 mb-3 text-[9px] text-center font-medium">
-                <a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" target="_blank" class="bg-slate-950 border border-slate-800 rounded-lg py-1.5 px-0.5 text-purple-400 truncate">🌐 BBC</a>
-                <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts" target="_blank" class="bg-slate-950 border border-slate-800 rounded-lg py-1.5 px-0.5 text-slate-400">🤖 Google</a>
-                <a href="https://play.google.com/store/apps/details?id=com.spotify.music" target="_blank" class="bg-slate-950 border border-slate-800 rounded-lg py-1.5 px-0.5 text-emerald-400">🎵 Spotify</a>
-                <a href="https://apps.apple.com/us/app/apple-podcasts/id525451387" target="_blank" class="bg-slate-950 border border-slate-800 rounded-lg py-1.5 px-0.5 text-slate-400">🍏 Apple</a>
-            </div>
-
-            <button onclick="activateTimer(30, 'block2', 'bg-purple-500/20 text-purple-400 border-purple-500', 'neon-purple')" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition shadow-lg shadow-purple-600/20 active:scale-[0.98]">Blokni Boshlash</button>
+            <p id="b2-text" class="text-xs text-slate-400 leading-relaxed mb-3">Yuklanmoqda...</p>
+            <button id="b2-btn" onclick="startStudySession(2)" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition active:scale-95 shadow-lg shadow-purple-600/10">Blokni Boshlash</button>
         </div>
 
         <div id="block3" class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-4 transition-all duration-300">
             <div class="flex justify-between items-start mb-2">
                 <div>
-                    <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">3-Blok • 60 daqiqa</span>
-                    <h3 class="text-white font-bold text-base mt-0.5">Jonli Amaliyot va AI</h3>
+                    <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">3-Blok • Target: 60 min [cite: 6]</span>
+                    <h3 class="text-white font-bold text-base mt-0.5">Jonli Amaliyot va AI [cite: 6]</h3>
                 </div>
                 <span id="b3-badge" class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-semibold">Kutilmoqda</span>
             </div>
-            <p class="text-xs text-slate-400 leading-relaxed mb-3">Shadowing metodi va AI bilan Ovozli erkin muloqot. Shanba kunlari chet ellik do'stlar topish uchun Tandem platformasidan foydalaning:</p>
+            <p id="b3-text" class="text-xs text-slate-400 leading-relaxed mb-3">Yuklanmoqda...</p>
             
-            <div class="grid grid-cols-3 gap-1.5 mb-3 text-[10px] text-center">
-                <a href="https://www.tandem.net/" target="_blank" class="bg-slate-950 border border-slate-800 rounded-lg p-1.5 text-emerald-400 font-medium hover:bg-slate-900 transition">🌐 Tandem</a>
-                <a href="https://play.google.com/store/apps/details?id=net.tandem" target="_blank" class="bg-slate-950 border border-slate-800 rounded-lg p-1.5 text-slate-400 font-medium hover:bg-slate-900 transition">🤖 Android</a>
-                <a href="https://apps.apple.com/us/app/tandem-language-exchange/id997185242" target="_blank" class="bg-slate-950 border border-slate-800 rounded-lg p-1.5 text-slate-400 font-medium hover:bg-slate-900 transition">🍏 iOS</a>
-            </div>
-
-            <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 mb-3 flex justify-between items-center gap-2">
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 mb-3 flex justify-between items-center gap-2 text-xs">
                 <div class="truncate">
-                    <span class="text-[9px] uppercase font-bold text-emerald-500 block">AI Ovozli Rejim Prompti:</span>
-                    <span class="text-[11px] text-slate-400 italic">"I want to practice my English speaking..."</span>
+                    <span class="text-[9px] uppercase font-bold text-emerald-500 block">AI Ovozli Prompt: [cite: 7]</span>
+                    <span class="text-slate-400 italic">"I want to practice my English speaking..." [cite: 9]</span>
                 </div>
-                <button onclick="copyAIPrompt()" class="bg-slate-800 hover:bg-slate-700 text-[11px] text-white font-semibold px-3 py-1.5 rounded-lg shrink-0 border border-slate-700 transition">Nusxa olish</button>
+                <button onclick="copyPrompt()" class="bg-slate-800 text-white font-semibold px-2.5 py-1 rounded-md border border-slate-700 text-[10px]">Nusxa olish</button>
             </div>
-            <button onclick="activateTimer(60, 'block3', 'bg-emerald-500/20 text-emerald-400 border-emerald-500', 'neon-emerald')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition shadow-lg shadow-emerald-600/20 active:scale-[0.98]">Blokni Boshlash</button>
+            <button id="b3-btn" onclick="startStudySession(3)" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition active:scale-95 shadow-lg shadow-emerald-600/10">Blokni Boshlash</button>
         </div>
 
     </main>
 
-    <section class="bg-slate-900/40 border border-slate-800 rounded-2xl p-4 mb-5">
-        <h4 class="text-xs font-black text-white uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
-            <span>🎯</span> 6 Oylik Bosqichma-bosqich Strategiya
-        </h4>
-        <div class="grid grid-cols-3 gap-2 text-center text-[11px]">
-            <div class="bg-slate-950 p-2 rounded-xl border border-blue-500/30">
-                <span class="block font-bold text-blue-400">1-2 Oylar</span>
-                <span class="text-[9px] text-slate-500 block mt-0.5">Miyadagi qulf [cite: 17]</span>
-            </div>
-            <div class="bg-slate-950 p-2 rounded-xl border border-slate-800">
-                <span class="block font-bold text-purple-400">3-4 Oylar</span>
-                <span class="text-[9px] text-slate-500 block mt-0.5">Slanglar [cite: 20]</span>
-            </div>
-            <div class="bg-slate-950 p-2 rounded-xl border border-slate-800">
-                <span class="block font-bold text-emerald-400">5-6 Oylar</span>
-                <span class="text-[9px] text-slate-500 block mt-0.5">Ravon Nutq [cite: 24]</span>
-            </div>
-        </div>
-    </section>
-
-    <footer class="space-y-3">
-        <button onclick="triggerEmergency()" class="w-full bg-slate-900/90 border border-slate-800 text-slate-400 hover:text-white py-3 rounded-xl text-xs font-bold tracking-wide transition flex items-center justify-center gap-2 active:scale-[0.99]">
-            <span>🛟</span> Bugun umuman vaqtim yo'q (2 daqiqa qoidasi) [cite: 38]
+    <footer>
+        <button onclick="triggerEmergency()" class="w-full bg-slate-900/90 border border-slate-800 text-slate-400 hover:text-white py-3 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2">
+            <span>🛟</span> Vaqtim mutlaqo yo'q (2 daqiqa qoidasi) [cite: 38]
         </button>
-        <div class="text-[10px] text-slate-500 text-center flex justify-center gap-4 border-t border-slate-900 pt-3">
-            <span>🔊 Loud Voice! [cite: 33]</span>
-            <span>🔗 Zanjirni Uzma! [cite: 36]</span>
-            <span>📱 Focus Mode [cite: 30]</span>
-        </div>
     </footer>
 
     <script>
         const tg = window.Telegram.WebApp;
         tg.expand();
 
-        let timerInterval;
+        let currentActiveBlock = null;
+        let sessionTimer = null;
+        let totalTimer = null;
+        
+        let sessionSeconds = 0;
+        let totalSeconds = 0;
 
-        // Haftalik to'liq ma'lumotlar bazasi va unga tegishli material havolalari
-        const weeklyPlan = [
-            { 
-                title: "🎬 Dushanba: Kino va Seriallar", 
-                desc: "Learn English with TV Series kanalidan bugun 1 ta video tahlilini tomosha qiling. Muhim iboralarni belgilang.",
-                links: [{ text: "📺 Learn English with TV Series", url: "https://www.youtube.com/@LearnEnglishWithTVSeries" }]
+        // Kunlik materiallar ma'lumotlar bazasi (Siz taqdim etgan linklar bilan to'liq sinxronlangan) [cite: 12, 15]
+        const materialDatabase = [
+            { // Dushanba [cite: 12]
+                b1: { text: "Grammatika va iboralarni takrorlang. Yangi so'zlarni Quizlet-ga joylang.", link: "https://quizlet.com/" },
+                b2: { text: "Learn English with TV Series kanalidan 1 ta video tahlilini tomosha qiling.", link: "https://www.youtube.com/embed?listType=user_uploads&list=LearnEnglishWithTVSeries", isEmbed: true },
+                b3: { text: "AI Shaxsiy Repetitoringiz bilan kinodagi voqealar haqida gaplashing.", link: "https://chatgpt.com" }
             },
-            { 
-                title: "🔥 Seshanba: Zamonaviy Slanglar", 
-                desc: "Linguamarina kanali orqali Amerikadagi eng ommabop 10 ta yangi slang va iborani ko'rib chiqasiz.",
-                links: [{ text: "📺 Linguamarina YouTube", url: "https://www.youtube.com/@linguamarina" }]
+            { // Seshanba [cite: 15]
+                b1: { text: "Linguamarina orqali Amerikadagi 10 ta eng yangi slangni o'rganing.", link: "https://www.youtube.com/embed?listType=user_uploads&list=linguamarina", isEmbed: true },
+                b2: { text: "Qiziqarli inglizcha podkast eshiting (Spotify yoki Google Podcasts).", link: "https://open.spotify.com" },
+                b3: { text: "O'rganilgan barcha slanglarni bugungi nutqingizga dadil qo'llang.", link: "https://chatgpt.com" }
             },
-            { 
-                title: "🇬🇧 Chorshanba: Britaniya Talaffuzi", 
-                desc: "English with Lucy'dan talaffuz qoidalari va BBC 6 Minute English bepul podkastidan foydalanib Shadowing qiling.",
-                links: [
-                    { text: "📺 English with Lucy", url: "https://www.youtube.com/@EnglishwithLucy" },
-                    { text: "🎙️ BBC 6 Minute English", url: "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" }
-                ]
+            { // Chorshanba [cite: 15]
+                b1: { text: "English with Lucy kanalidan eng muhim talaffuz qoidalarini ko'ring.", link: "https://www.youtube.com/embed?listType=user_uploads&list=EnglishwithLucy", isEmbed: true },
+                b2: { text: "BBC 6 Minute English audio podkastini to'liq diqqat bilan eshiting.", link: "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" },
+                b3: { text: "Eshitgan audioingizga taqlid qilib Shadowing (baland ovozda takrorlash) qiling.", link: "https://chatgpt.com" }
             },
-            { 
-                title: "📖 Payshanba: Kreativ Hikoya", 
-                desc: "Haftalik so'zlarni takrorlang. TED-Ed videolaridan motivatsiya oling va AI'ga 5 daqiqa to'xtamay hikoya aytib bering.",
-                links: [
-                    { text: "📺 TED-Ed YouTube", url: "https://www.youtube.com/@TEDEd" },
-                    { text: "🎙️ BBC Podkast Sayti", url: "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" }
-                ]
+            { // Payshanba [cite: 15]
+                b1: { text: "Haftalik barcha yangi so'zlarni Quizlet Flashcards yordamida takrorlang.", link: "https://quizlet.com/" },
+                b2: { text: "TED-Ed kanalidan qiziqarli ilmiy yoki motivatsion podkast eshiting.", link: "https://www.youtube.com/embed?listType=user_uploads&list=TEDEd", isEmbed: true },
+                b3: { text: "AI repetitorga bitta erkin mavzu berib, 5 daqiqa to'xtamay hikoya aytib bering.", link: "https://chatgpt.com" }
             },
-            { 
-                title: "🗣 Juma: Debat va Munozara", 
-                desc: "Global munozarali mavzu tanlang (masalan: AI xavflimi?) va AI ovozli repetitori bilan murosasiz debat qiling.",
-                links: [{ text: "🤖 ChatGPT yoki AI Voice'ni oching", url: "#" }]
+            { // Juma [cite: 15]
+                b1: { text: "Global mavzuda (Masalan: 'AI xavflimi?') inglizcha argument va fikrlar yig'ing.", link: "https://quizlet.com/" },
+                b2: { text: "Tanlangan debat mavzusiga oid podkastlar yoki bahslarni tinglang.", link: "https://open.spotify.com" },
+                b3: { text: "AI bilan jonli ovozda murosasiz dars bahsini olib boring (Debat Rejimi).", link: "https://chatgpt.com" }
             },
-            { 
-                title: "🤝 Shanba: Jonli Muloqot", 
-                desc: "Xatolar ustida ishlab, Tandem orqali chet ellik ona tili egalari yoki tengdoshlar bilan jonli ovozli suhbat quring.",
-                links: [{ text: "🌐 Tandem Rasmiy Sayti", url: "https://www.tandem.net/" }]
+            { // Shanba [cite: 15]
+                b1: { text: "Hafta davomida eng ko'p xato qilgan grammatik qoidalaringizni ko'rib chiqing.", link: "https://quizlet.com/" },
+                b2: { text: "Chet ellik ona tili egalarining jonli audiolari va podkastlarini eshiting.", link: "https://open.spotify.com" },
+                b3: { text: "Tandem ilovasi orqali xalqaro do'stlar bilan audio suhbat quring.", link: "https://www.tandem.net/" }
             },
-            { 
-                title: "🎉 Yakshanba: Dam Olish Kuni", 
-                desc: "Yangi og'ir darslar yo'q. Quizlet ilovasida 10 daqiqa ko'z yugurtiring va sevimli filmingizni tomosha qiling.",
-                links: [{ text: "🧠 Quizlet Sayti", url: "https://quizlet.com/" }]
+            { // Yakshanba (Dam Olish Kuni) [cite: 15]
+                b1: { text: "Yangi darslar yo'q. Quizlet dasturida bor-yo'g'i 10 daqiqa ko'z yugurtiring.", link: "https://quizlet.com/" },
+                b2: { text: "O'zingizni taqdirlash uchun sevimli filmingizni inglizcha subtitrda ko'ring.", link: "https://www.youtube.com" },
+                b3: { text: "Hech qanday og'ir yuklamasiz erkin tarzda hordiq chiqaring.", link: "https://chatgpt.com" }
             }
         ];
 
-        // Bugungi kunni aniqlash va kontent/tugmalarni dinamik chiqarish
+        // Haftalik kun sarlavhalari [cite: 12, 15]
+        const textPlan = [
+            { title: "🎬 Dushanba: Kino va Seriallar", desc: "Learn English with TV Series tahlili va iboralar." },
+            { title: "🔥 Seshanba: Zamonaviy Slanglar", desc: "Linguamarina orqali Amerika slangi va podkastlar." },
+            { title: "🇬🇧 Chorshanba: Britaniya Talaffuzi", desc: "English with Lucy qoidalari va BBC podkast." },
+            { title: "📖 Payshanba: Kreativ Hikoya", desc: "Quizlet takrorlash va AI'ga to'xtovsiz hikoya." },
+            { title: "🗣 Juma: Debat va Munozara", desc: "Global mavzularda fikr yig'ish va AI bilan bahs." },
+            { title: "🤝 Shanba: Jonli Muloqot", desc: "Xatolar ustida ishlash va Tandem audio muloqot." },
+            { title: "🎉 Yakshanba: Dam Olish Kuni", desc: "Yangi dars yo'q! 10 daqiqa Quizlet va inglizcha kino." }
+        ];
+
+        // Bugungi kun tartibini avtomat o'qish (0-Dushanba, ..., 6-Yakshanba)
         const currentDayIndex = new Date().getDay() === 0 ? 6 : new Date().getDay() - 1;
-        const todayData = weeklyPlan[currentDayIndex];
+        const currentMaterials = materialDatabase[currentDayIndex];
+
+        document.getElementById('today-title').innerText = textPlan[currentDayIndex].title;
+        document.getElementById('today-desc').innerText = textPlan[currentDayIndex].desc;
         
-        document.getElementById('today-title').innerText = todayData.title;
-        document.getElementById('today-desc').innerText = todayData.desc;
+        document.getElementById('b1-text').innerText = currentMaterials.b1.text;
+        document.getElementById('b2-text').innerText = currentMaterials.b2.text;
+        document.getElementById('b3-text').innerText = currentMaterials.b3.text;
 
-        // Dinamik havolalarni joylashtirish
-        const linksContainer = document.getElementById('today-links');
-        todayData.links.forEach(link => {
-            const a = document.createElement('a');
-            a.href = link.url;
-            a.target = "_blank";
-            a.className = "bg-blue-600/20 text-blue-400 border border-blue-500/30 font-bold px-3 py-1.5 rounded-lg hover:bg-blue-600 hover:text-white transition block";
-            a.innerText = link.text;
-            linksContainer.appendChild(a);
-        });
+        // UMUMIY ISHLASH VAQTI (Global taymer)
+        totalTimer = setInterval(() => {
+            totalSeconds++;
+            let hrs = Math.floor(totalSeconds / 3600);
+            let mins = Math.floor((totalSeconds % 3600) / 60);
+            let secs = totalSeconds % 60;
+            document.getElementById('total-time-display').innerText = 
+                `${hrs < 10 ? '0'+hrs : hrs}:${mins < 10 ? '0'+mins : mins}:${secs < 10 ? '0'+secs : secs}`;
+        }, 1000);
 
-        // Taymer funksiyasi
-        function activateTimer(minutes, blockId, badgeClasses, glowClass) {
-            clearInterval(timerInterval);
-            
-            ['block1', 'block2', 'block3'].forEach(id => {
-                document.getElementById(id).className = "bg-slate-900/50 border border-slate-800/80 rounded-2xl p-4 transition-all duration-300";
-            });
-            
-            const activeCard = document.getElementById(blockId);
-            activeCard.classList.add('bg-slate-900', glowClass);
-            
-            const badge = document.getElementById(blockId + '-badge');
-            badge.innerText = "Bajarilmoqda";
-            badge.className = `text-[10px] px-2 py-0.5 rounded-md font-semibold border ${badgeClasses}`;
+        // DARSLIK SEANSI / BLOKNI BOSHLASH LOGIKASI
+        function startStudySession(blockNum) {
+            if (currentActiveBlock !== null) {
+                alert("Sizda ayni paytda faol blok mavjud! Uni avval yakunlang.");
+                return;
+            }
 
-            const timerPanel = document.getElementById('timer-panel');
-            const timerClock = document.getElementById('timer-clock');
-            const timerBadge = document.getElementById('timer-badge');
+            currentActiveBlock = blockNum;
+            sessionSeconds = 0;
             
-            timerPanel.classList.remove('hidden');
-            timerBadge.innerText = blockId === 'block3' ? "Jonli Amaliyot (60 min)" : "Fokus Mashg'ulot (30 min)";
-            timerBadge.className = `text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider mb-2 inline-block ${badgeClasses}`;
+            const studio = document.getElementById('study-studio');
+            const frame = document.getElementById('studio-frame');
+            const placeholder = document.getElementById('frame-placeholder');
+            const directLink = document.getElementById('studio-direct-link');
+            const title = document.getElementById('studio-block-title');
 
-            let duration = minutes * 60;
-            
-            timerInterval = setInterval(() => {
-                let min = Math.floor(duration / 60);
-                let sec = duration % 60;
-                
-                timerClock.innerText = `${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
-                
-                if (duration <= 0) {
-                    clearInterval(timerInterval);
-                    timerClock.innerText = "00:00";
-                    badge.innerText = "✅ Tayyor";
-                    badge.className = "text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500 px-2 py-0.5 rounded-md font-semibold";
-                    timerPanel.classList.add('hidden');
-                    
-                    if (tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
-                    alert("Barakalla! Ushbu dars bloki muvaffaqiyatli yakunlandi. Zanjirni uzmang! 🔥");
-                }
-                duration--;
+            studio.classList.remove('hidden');
+            title.innerText = `${blockNum}-Blok Mashg'uloti`;
+
+            let blockData = currentMaterials[`b${blockNum}`];
+            directLink.href = blockData.link;
+
+            // YouTube embed tizimini tekshirish (Ichida to'g'ri ijro etilishi uchun)
+            if (blockData.isEmbed) {
+                frame.src = blockData.link;
+                frame.classList.remove('hidden');
+                placeholder.classList.add('hidden');
+            } else {
+                frame.src = "";
+                frame.classList.add('hidden');
+                placeholder.classList.remove('hidden');
+            }
+
+            // Vizual kartani neon holatga o'tkazish
+            let colorClass = blockNum === 1 ? 'neon-blue' : blockNum === 2 ? 'neon-purple' : 'neon-emerald';
+            document.getElementById(`block${blockNum}`).classList.add(colorClass);
+            document.getElementById(`b${blockNum}-badge`).innerText = "Bajarilmoqda... ⏳";
+            document.getElementById(`b${blockNum}-btn`).disabled = true;
+
+            // Blok sekundomerini yuritish
+            sessionTimer = setInterval(() => {
+                sessionSeconds++;
+                let m = Math.floor(sessionSeconds / 60);
+                let s = sessionSeconds % 60;
+                document.getElementById('studio-timer').innerText = `${m < 10 ? '0'+m : m}:${s < 10 ? '0'+s : s}`;
             }, 1000);
+
+            if (tg.HapticFeedback) tg.HapticFeedback.impactOccurred('medium');
         }
 
-        // AI Prompt nusxalash
-        function copyAIPrompt() {
-            const textToCopy = "I want to practice my English speaking. Act as a friendly American native speaker. Chat with me on casual topics, correct my pronunciation or grammar mistakes gently after each turn, and ask follow-up questions to keep the conversation going.";
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                if (tg.HapticFeedback) tg.HapticFeedback.impactOccurred('medium');
-                alert("Prompt nusxalandi! Uni AI ovozli rejimiga tashlab suhbatni boshlang. 🤖");
+        // SEANSNI TO'XTATISH VA NATIJANI QAYD ETISH
+        function stopStudySession() {
+            clearInterval(sessionTimer);
+            let blockNum = currentActiveBlock;
+            let m = Math.floor(sessionSeconds / 60);
+            
+            document.getElementById('study-studio').classList.add('hidden');
+            document.getElementById(`b${blockNum}-badge`).innerText = `✅ Bajarildi (${m} min)`;
+            document.getElementById(`b${blockNum}-badge`).className = "text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-md font-bold border border-emerald-500/30";
+            
+            // Neon effektini tozalash
+            let colorClass = blockNum === 1 ? 'neon-blue' : blockNum === 2 ? 'neon-purple' : 'neon-emerald';
+            document.getElementById(`block${blockNum}`).classList.remove(colorClass);
+
+            alert(`Ajoyib! Siz ushbu dars blokida ${m} daqiqa chin dildan shug'ullandingiz. Umumiy vaqt hisoblab borilmoqda. 🔥`);
+            
+            currentActiveBlock = null;
+            if (tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
+        }
+
+        // AI PROMPT NUSXALASH
+        function copyPrompt() {
+            const promptText = "I want to practice my English speaking. Act as a friendly American native speaker. Chat with me on casual topics, correct my pronunciation or grammar mistakes gently after each turn, and ask follow-up questions to keep the conversation going."; [cite: 9]
+            navigator.clipboard.writeText(promptText).then(() => {
+                if (tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
+                alert("Prompt nusxalandi! Uni AI (ChatGPT) ovozli rejimiga tashlab suhbat quring. 🤖"); [cite: 8]
             });
         }
 
-        // 2 daqiqa qoidasi
+        // 2 DAQIQA QOIDASI
         function triggerEmergency() {
-            if (confirm("Bugun haqiqatdan ham dars qilishga kuchingiz yoki vaqtingiz yo'qmi? Zanjirni (Streak) uzib yubormaslik uchun 2 daqiqa qoidasini qo'llaymiz!")) {
-                alert("Ajoyib! Quyidagi 5 ta oltin so'zga ko'z yugurtiring:\n\n1. Consistency — Muntazamlik\n2. Persistence — Qat'iyatlilik\n3. Fluency — Ravon nutq\n4. Practice — Amaliyot\n5. Focus — Diqqatni jamlash\n\nBugungi zanjiringiz saqlab qolindi! 🔥 Dam oling.");
+            if (confirm("Bugun charchagan bo'lsangiz zanjir uzilib ketmasligi uchun faqat 5 ta oltin so'zni takrorlaymiz. Rozimisiz?")) { [cite: 38]
+                alert("Consistency — Muntazamlik\nFluency — Ravonlik\nFocus — Diqqat\nPractice — Amaliyot\nLoud Voice — Baland ovoz\n\nZanjir saqlab qolindi! Bugunga yetarli. ✨"); [cite: 34, 38]
                 tg.close();
             }
         }
