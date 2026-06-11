@@ -16,11 +16,9 @@
         .neon-blue { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); border-color: #3b82f6; }
         .neon-purple { box-shadow: 0 0 20px rgba(168, 85, 247, 0.3); border-color: #a855f7; }
         .neon-emerald { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); border-color: #10b981; }
-        .custom-scroll::-webkit-scrollbar { width: 4px; }
-        .custom-scroll::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
     </style>
 </head>
-<body class="p-4 max-w-md mx-auto min-h-screen flex flex-col justify-between custom-scroll">
+<body class="p-4 max-w-md mx-auto min-h-screen flex flex-col justify-between">
 
     <header class="flex justify-between items-center bg-slate-900/80 backdrop-blur border border-slate-800 rounded-2xl p-4 mb-4">
         <div>
@@ -42,10 +40,16 @@
         <button onclick="stopCurrentSession()" class="mt-2 bg-red-600/20 text-red-400 hover:bg-red-600 hover:text-white border border-red-500/30 text-xs font-bold py-1.5 px-4 rounded-xl transition">Mashg'ulotni Yakunlash</button>
     </section>
 
+    <section class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-4 mb-4">
+        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Bugungi Reja:</span>
+        <h2 id="today-title" class="text-lg font-black text-white mb-1">Yuklanmoqda...</h2>
+        <p id="today-desc" class="text-xs text-slate-400 leading-relaxed"></p>
+    </section>
+
     <main class="space-y-4 mb-6">
         
         <div id="block1" class="bg-slate-900/50 border border-slate-800 rounded-2xl p-4 transition-all duration-300">
-            <div class="flex justify-between items-start mb-2">
+            <div class="flex justify-between items-start mb-3">
                 <div>
                     <span class="text-[10px] font-bold text-blue-400 uppercase tracking-wider">1-Blok • 30 daqiqa</span>
                     <h3 class="text-white font-bold text-base mt-0.5">Baza va So'z Boyligi</h3>
@@ -53,7 +57,7 @@
                 <span id="b1-badge" class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-semibold">Kutilmoqda</span>
             </div>
             
-            <button id="b1-start-btn" onclick="openBlockContent(1)" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition shadow-lg shadow-blue-600/10">Blokni Boshlash</button>
+            <button id="b1-start-btn" onclick="openBlockContent(1)" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition">Blokni Boshlash</button>
 
             <div id="b1-content" class="hidden mt-4 pt-3 border-t border-slate-800 space-y-3">
                 <p id="b1-text" class="text-xs text-slate-400 leading-relaxed"></p>
@@ -61,12 +65,12 @@
                     <span class="text-[10px] text-blue-400 font-bold block uppercase mb-1">📄 Bugungi Material:</span>
                     <span id="b1-link-text" class="text-xs font-semibold text-white underline"></span>
                 </div>
-                <button id="b1-action-btn" onclick="executeMaterial(1)" class="hidden w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-black text-xs py-2.5 rounded-xl animate-bounce">⚡️ Bajarish (Taymerni Yoqish)</button>
+                <button id="b1-action-btn" onclick="executeMaterial(1)" class="hidden w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-black text-xs py-2.5 rounded-xl">⚡️ Bajarish (Taymerni Yoqish)</button>
             </div>
         </div>
 
         <div id="block2" class="bg-slate-900/50 border border-slate-800 rounded-2xl p-4 transition-all duration-300">
-            <div class="flex justify-between items-start mb-2">
+            <div class="flex justify-between items-start mb-3">
                 <div>
                     <span class="text-[10px] font-bold text-purple-400 uppercase tracking-wider">2-Blok • 30 daqiqa</span>
                     <h3 class="text-white font-bold text-base mt-0.5">Native Nutqini Tinglash</h3>
@@ -74,7 +78,7 @@
                 <span id="b2-badge" class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-semibold">Kutilmoqda</span>
             </div>
             
-            <button id="b2-start-btn" onclick="openBlockContent(2)" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition shadow-lg shadow-purple-600/10">Blokni Boshlash</button>
+            <button id="b2-start-btn" onclick="openBlockContent(2)" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition">Blokni Boshlash</button>
 
             <div id="b2-content" class="hidden mt-4 pt-3 border-t border-slate-800 space-y-3">
                 <p id="b2-text" class="text-xs text-slate-400 leading-relaxed"></p>
@@ -82,12 +86,12 @@
                     <span class="text-[10px] text-purple-400 font-bold block uppercase mb-1">🎧 Bugungi Material:</span>
                     <span id="b2-link-text" class="text-xs font-semibold text-white underline"></span>
                 </div>
-                <button id="b2-action-btn" onclick="executeMaterial(2)" class="hidden w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white font-black text-xs py-2.5 rounded-xl animate-bounce">⚡️ Bajarish (Taymerni Yoqish)</button>
+                <button id="b2-action-btn" onclick="executeMaterial(2)" class="hidden w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white font-black text-xs py-2.5 rounded-xl">⚡️ Bajarish (Taymerni Yoqish)</button>
             </div>
         </div>
 
         <div id="block3" class="bg-slate-900/50 border border-slate-800 rounded-2xl p-4 transition-all duration-300">
-            <div class="flex justify-between items-start mb-2">
+            <div class="flex justify-between items-start mb-3">
                 <div>
                     <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">3-Blok • 60 daqiqa</span>
                     <h3 class="text-white font-bold text-base mt-0.5">Jonli Amaliyot va AI</h3>
@@ -95,7 +99,7 @@
                 <span id="b3-badge" class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-semibold">Kutilmoqda</span>
             </div>
             
-            <button id="b3-start-btn" onclick="openBlockContent(3)" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition shadow-lg shadow-emerald-600/10">Blokni Boshlash</button>
+            <button id="b3-start-btn" onclick="openBlockContent(3)" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition">Blokni Boshlash</button>
 
             <div id="b3-content" class="hidden mt-4 pt-3 border-t border-slate-800 space-y-3">
                 <p id="b3-text" class="text-xs text-slate-400 leading-relaxed"></p>
@@ -112,7 +116,7 @@
                     <span class="text-[10px] text-emerald-400 font-bold block uppercase mb-1">🤖 Amaliyot Maydoni:</span>
                     <span id="b3-link-text" class="text-xs font-semibold text-white underline"></span>
                 </div>
-                <button id="b3-action-btn" onclick="executeMaterial(3)" class="hidden w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-black text-xs py-2.5 rounded-xl animate-bounce">⚡️ Bajarish (Taymerni Yoqish)</button>
+                <button id="b3-action-btn" onclick="executeMaterial(3)" class="hidden w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-black text-xs py-2.5 rounded-xl">⚡️ Bajarish (Taymerni Yoqish)</button>
             </div>
         </div>
 
@@ -120,63 +124,77 @@
 
     <footer>
         <button onclick="runEmergencyRule()" class="w-full bg-slate-900/90 border border-slate-800 text-slate-400 hover:text-white py-3 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2">
-            <span>🛟</span> Bugun darsga mutlaqo vaqtim yo'q (2 daqiqa qoidasi)
+            <span>🛟</span> Vaqtim mutlaqo yo'q (2 daqiqa qoidasi)
         </button>
     </footer>
 
     <script>
         const tg = window.Telegram.WebApp;
-        tg.expand();
+        if (tg) tg.expand();
 
         let globalSeconds = 0;
         let sessionSeconds = 0;
         let sessionInterval = null;
         let currentActiveBlock = null;
 
-        // Haftalik to'liq materiallar ombori (Kunlik tartib bo'yicha)
+        // Haftalik toza ma'lumotlar bazasi
         const weeklyDatabase = [
-            { // Dushanba
+            { 
                 b1: { text: "Grammatika va zamonaviy iboralar ustida ishlang.", name: "🌐 Quizlet Platformasi", url: "https://quizlet.com/" },
                 b2: { text: "Learn English with TV Series kanalidan bugun 1 ta video tahlilini ko'ring.", name: "📺 Learn English with TV Series (YouTube)", url: "https://www.youtube.com/@LearnEnglishWithTVSeries" },
-                b3: { text: "Sun'iy intellekt (AI) ovozli boti bilan kinodagi voqealar haqida gaplashing.", name: "🤖 ChatGPT Ovozli Muloqot", url: "https://chatgpt.com" }
+                b3: { text: "Sun'iy intellekt (AI) boti bilan kinodagi voqealar haqida gaplashing.", name: "🤖 ChatGPT Ovozli Muloqot", url: "https://chatgpt.com" }
             },
-            { // Seshanba
+            { 
                 b1: { text: "Linguamarina orqali Amerikadagi 10 ta eng yangi slangni o'rganing.", name: "📺 Linguamarina Slang Video (YouTube)", url: "https://www.youtube.com/@linguamarina" },
                 b2: { text: "Qiziqarli mavzuda podkast tinglang (Spotify).", name: "🎵 Spotify Podcasts", url: "https://play.google.com/store/apps/details?id=com.spotify.music" },
                 b3: { text: "O'rganilgan slanglarni AI bilan gaplashganda nutqqa qo'llang.", name: "🤖 ChatGPT Ovozli Muloqot", url: "https://chatgpt.com" }
             },
-            { // Chorshanba
+            { 
                 b1: { text: "English with Lucy kanalidan talaffuz qoidalarini ko'rib chiqing.", name: "📺 English with Lucy (YouTube)", url: "https://www.youtube.com/@EnglishwithLucy" },
-                b2: { text: "BBC 6 Minute English podkastini diqqat bilan tinglang.", name: "🎙️ BBC 6 Minute English Rasmiy Sayt", url: "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" },
+                b2: { text: "BBC 6 Minute English podkastini diqqat bilan tinglang.", name: "🎙️ BBC 6 Minute English", url: "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" },
                 b3: { text: "Britaniya aksentiga mukammal taqlid qilib Shadowing qiling.", name: "🤖 ChatGPT Ovozli Muloqot", url: "https://chatgpt.com" }
             },
-            { // Payshanba
+            { 
                 b1: { text: "Haftalik barcha so'zlarni Quizlet Flashcards orqali takrorlang.", name: "🌐 Quizlet Rasmiy Sayti", url: "https://quizlet.com/" },
                 b2: { text: "TED-Ed kanalidan qiziqarli motivatsion yoki ilmiy nutq eshiting.", name: "📺 TED-Ed Podkastlar (YouTube)", url: "https://www.youtube.com/@TEDEd" },
                 b3: { text: "AI'ga bitta erkin mavzu berib, 5 daqiqa to'xtamay hikoya aytib bering.", name: "🤖 ChatGPT Ovozli Muloqot", url: "https://chatgpt.com" }
             },
-            { // Juma
-                b1: { text: "Biror global mavzuda (Masalan: 'AI xavflimi?') inglizcha argumentlar to'plang.", name: "🌐 Quizlet Lug'at Markazi", url: "https://quizlet.com/" },
+            { 
+                b1: { text: "Global mavzuda inglizcha argumentlar to'plang.", name: "🌐 Quizlet Lug'at Markazi", url: "https://quizlet.com/" },
                 b2: { text: "Ushbu debatga mos keladigan podkastlarni bepul saytdan eshiting.", name: "🎙️ BBC Learning English", url: "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" },
                 b3: { text: "AI bilan jonli ovozda murosasiz bahslashing (Debat rejimi).", name: "🤖 ChatGPT Ovozli Muloqot", url: "https://chatgpt.com" }
             },
-            { // Shanba
+            { 
                 b1: { text: "Hafta davomida eng ko'p xato qilingan grammatikalarni qayta ko'ring.", name: "🌐 Quizlet Platformasi", url: "https://quizlet.com/" },
                 b2: { text: "Google yoki Apple podkastlar ilovasi orqali ona tili egalarini tinglang.", name: "🤖 Google Podcasts Ilovasi", url: "https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts" },
                 b3: { text: "Tandem ilovasi orqali chet ellik tengdoshlar bilan audio suhbat quring.", name: "🤝 Tandem Language Exchange", url: "https://www.tandem.net/" }
             },
-            { // Yakshanba (Dam Olish Kuni)
+            { 
                 b1: { text: "Yangi dars yo'q. Faqat Quizlet'da 10 daqiqa ko'z yugurtiring.", name: "🌐 Quizlet Tizimi", url: "https://quizlet.com/" },
                 b2: { text: "O'zingizni mukofotlash uchun inglizcha subtitrli sevimli kinoni ko'ring.", name: "📺 YouTube Filmlar", url: "https://www.youtube.com" },
-                b3: { text: "Hech qanday og'ir darslarsiz miyaga dam bering.", name: "🤖 Erkin AI Suhbat", url: "https://chatgpt.com" }
+                b3: { text: "Hech qanday og'ir darslarsiz miyaga dam bering.", name: "🤖 Erkin AI Erkin Muloqot", url: "https://chatgpt.com" }
             }
         ];
 
-        // Bugungi kun indeksini topish (Dushanba-0, ..., Yakshanba-6)
+        const textPlan = [
+            { title: "🎬 Dushanba: Kino va Seriallar", desc: "Learn English with TV Series tahlili va iboralar." },
+            { title: "🔥 Seshanba: Zamonaviy Slanglar", desc: "Linguamarina orqali Amerika slangi va podkastlar." },
+            { title: "🇬🇧 Chorshanba: Britaniya Talaffuzi", desc: "English with Lucy qoidalari va BBC podkast." },
+            { title: "📖 Payshanba: Kreativ Hikoya", desc: "Quizlet takrorlash va AI'ga to'xtovsiz hikoya." },
+            { title: "🗣 Juma: Debat va Munozara", desc: "Global mavzularda fikr yig'ish va AI bilan bahs." },
+            { title: "🤝 Shanba: Jonli Muloqot", desc: "Xatolar ustida ishlash va Tandem audio muloqot." },
+            { title: "🎉 Yakshanba: Dam Olish Kuni", desc: "Yangi dars yo'q! 10 daqiqa Quizlet va inglizcha kino." }
+        ];
+
+        // Bugungi kunni hisoblash (Dushanba - 0, ..., Yakshanba - 6)
         const dayIdx = new Date().getDay() === 0 ? 6 : new Date().getDay() - 1;
         const todayData = weeklyDatabase[dayIdx];
 
-        // 1. GLOBAL UMUMIY TAYMER (Ilova ochilgandan boshlab ishlaydi)
+        // Sarlavhalarni to'g'irlash (Yuklanmoqda so'zini yo'qotish)
+        document.getElementById('today-title').innerText = textPlan[dayIdx].title;
+        document.getElementById('today-desc').innerText = textPlan[dayIdx].desc;
+
+        // 1. Global vaqt hisoblagichi
         setInterval(() => {
             globalSeconds++;
             let h = Math.floor(globalSeconds / 3600);
@@ -186,48 +204,39 @@
                 `${h < 10 ? '0'+h : h}:${m < 10 ? '0'+m : m}:${s < 10 ? '0'+s : s}`;
         }, 1000);
 
-        // 2. BLOKNI BOSHLASH (KUNLIK REJANI OCHISH)
+        // 2. Blokni ochish
         function openBlockContent(blockNum) {
             if (currentActiveBlock !== null) {
-                alert("Sizda hozir bajarilayotgan faol dars bloki bor! Avval uni yakunlang.");
+                alert("Sizda hozir bajarilayotgan faol dars bloki bor!");
                 return;
             }
-
-            // Kontent panelini ko'rsatish
             document.getElementById(`b${blockNum}-content`).classList.remove('hidden');
             document.getElementById(`b${blockNum}-start-btn`).classList.add('hidden');
 
-            // Ma'lumotlarni yozish
             document.getElementById(`b${blockNum}-text`).innerText = todayData[`b${blockNum}`].text;
             document.getElementById(`b${blockNum}-link-text`).innerText = todayData[`b${blockNum}`].name;
-
-            if (tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
+            
+            if (tg && tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
         }
 
-        // 3. MATERIAL USTIGA BOSGANDA "BAJARISH TUGMASI" CHIQISHI
+        // 3. Materialni tanlash
         function selectMaterial(blockNum) {
-            // Material kartasining dizaynini faollashtirish
             let colorClass = blockNum === 1 ? 'border-blue-500 bg-blue-950/20' : blockNum === 2 ? 'border-purple-500 bg-purple-950/20' : 'border-emerald-500 bg-emerald-950/20';
             document.getElementById(`b${blockNum}-mat-card`).className = `border-2 rounded-xl p-3 cursor-pointer transition ${colorClass}`;
-            
-            // "Bajarish" tugmasini ko'rsatish
             document.getElementById(`b${blockNum}-action-btn`).classList.remove('hidden');
-
-            if (tg.HapticFeedback) tg.HapticFeedback.impactOccurred('medium');
+            
+            if (tg && tg.HapticFeedback) tg.HapticFeedback.impactOccurred('medium');
         }
 
-        // 4. BAJARISH TUGMASI BOSILGANDA TAYMER ISHGA TUSHIB SAYTGA O'TISHI
+        // 4. Taymerni yoqish va o'tish
         function executeMaterial(blockNum) {
             currentActiveBlock = blockNum;
             sessionSeconds = 0;
 
-            // Kartani butunlay neon rejimiga o'tkazish
             let glowClass = blockNum === 1 ? 'neon-blue' : blockNum === 2 ? 'neon-purple' : 'neon-emerald';
             document.getElementById(`block${blockNum}`).classList.add(glowClass);
-            document.getElementById(`b${blockNum}-badge`).innerText = "Bajarilmoqda... ⏳";
-            document.getElementById(`b${blockNum}-action-btn`).classList.add('hidden');
+            document.getElementById(`b${blockNum}-badge`).innerText = "Bajarilmoqda...";
 
-            // Yuqoridagi asosiy dars sekundomerini yoqish
             document.getElementById('global-timer-panel').classList.remove('hidden');
             document.getElementById('timer-status-title').innerText = `${blockNum}-Blok Mashg'uloti`;
 
@@ -238,49 +247,42 @@
                 document.getElementById('session-clock').innerText = `${min < 10 ? '0'+min : min}:${sec < 10 ? '0'+sec : sec}`;
             }, 1000);
 
-            if (tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
+            if (tg && tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
 
-            // FOYDALANUVCHINI TO'G'RIDAN-TO'G'RI TASHQI SAYT YOKI ILOVAGA YO'NALTIRISH
             setTimeout(() => {
                 window.open(todayData[`b${blockNum}`].url, '_blank');
-            }, 300);
+            }, 200);
         }
 
-        // 5. MASHG'ULOTNI TUGATISH
+        // 5. Seansni tugatish
         function stopCurrentSession() {
             clearInterval(sessionInterval);
             let bNum = currentActiveBlock;
             let totalMins = Math.floor(sessionSeconds / 60);
 
-            // Vizual sozlamalarni tozalash va yakunlash holatiga keltirish
             document.getElementById('global-timer-panel').classList.add('hidden');
-            document.getElementById(`b${bNum}-badge`).innerText = `✅ Tayyor (${totalMins} min)`;
-            document.getElementById(`b${bNum}-badge`).className = "text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-md font-bold border border-emerald-500/30";
+            document.getElementById(`b${bNum}-badge`).innerText = `✅ Bajarildi (${totalMins} m)`;
+            document.getElementById(`b${bNum}-badge`).className = "text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-md font-bold";
             
             let glowClass = bNum === 1 ? 'neon-blue' : bNum === 2 ? 'neon-purple' : 'neon-emerald';
             document.getElementById(`block${bNum}`).classList.remove(glowClass);
             document.getElementById(`b${bNum}-content`).classList.add('hidden');
 
-            alert(`Barakalla! Ushbu blokda ${totalMins} daqiqa dars qildingiz. Keyingi bloklarga o'tishingiz mumkin! 🚀`);
-            
+            alert(`Blok yakunlandi! ${totalMins} daqiqa dars yozildi. 🔥`);
             currentActiveBlock = null;
-            if (tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
         }
 
-        // AI Prompt ko'chirish
         function copyPromptText() {
             const txt = "I want to practice my English speaking. Act as a friendly American native speaker. Chat with me on casual topics, correct my pronunciation or grammar mistakes gently after each turn, and ask follow-up questions to keep the conversation going.";
             navigator.clipboard.writeText(txt).then(() => {
-                if (tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
-                alert("AI Prompt nusxalandi! Uni ChatGPT ovozli rejimida ishlatishingiz mumkin. 🤖");
+                alert("Prompt nusxalandi! 🤖");
             });
         }
 
-        // 2 daqiqa qoidasi
         function runEmergencyRule() {
-            if (confirm("Bugun dars qilishga imkon yo'qmi? Zanjirni saqlash uchun 5 ta oltin so'zni eslaymiz.")) {
-                alert("Consistency (Muntazamlik)\nFluency (Ravonlik)\nFocus (Diqqat)\nPractice (Amaliyot)\nLoud Voice (Baland ovoz)\n\nBugungi kun hisobga olindi. Dam oling! 🔥");
-                tg.close();
+            if (confirm("Zanjirni saqlash uchun 5 ta oltin so'zni eslaymiz?")) {
+                alert("Consistency, Fluency, Focus, Practice, Loud Voice!\nKun saqlab qolindi.");
+                if (tg) tg.close();
             }
         }
     </script>
