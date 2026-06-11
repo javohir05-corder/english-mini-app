@@ -41,8 +41,8 @@
     </section>
 
     <section class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-4 mb-4">
-        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Bugungi Target:</span>
-        <h2 id="today-title" class="text-lg font-black text-white mb-1">Dars rejasi yuklanmoqda...</h2>
+        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Bugungi Kun Tartibi:</span>
+        <h2 id="today-title" class="text-lg font-black text-white mb-1">Yuklanmoqda...</h2>
         <p id="today-desc" class="text-xs text-slate-400 leading-relaxed"></p>
     </section>
 
@@ -60,11 +60,15 @@
             <button id="b1-start-btn" onclick="openBlockContent(1)" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition shadow-lg shadow-blue-600/20">Blokni Boshlash</button>
 
             <div id="b1-content" class="hidden mt-4 pt-3 border-t border-slate-800 space-y-3">
-                <p id="b1-text" class="text-xs text-slate-300 leading-relaxed bg-slate-950/40 p-2.5 rounded-xl border border-slate-800/60"></p>
+                <p class="text-[11px] font-bold text-blue-400 uppercase">📋 Ushbu blokda bajariladigan barcha ishlar:</p>
                 
+                <div id="b1-tasks-container" class="space-y-2 text-xs text-slate-300 leading-relaxed">
+                    </div>
+                
+                <p class="text-[11px] font-bold text-slate-400 uppercase mt-2">🔗 Ishlatiladigan barcha resurslar (Ustiga bosing):</p>
                 <div id="b1-links-container" class="space-y-2"></div>
                 
-                <button id="b1-action-btn" onclick="executeMaterial(1)" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-xs py-2.5 rounded-xl transition tracking-wide">⚡️ Taymerni Yoqish va Boshlash</button>
+                <button id="b1-action-btn" onclick="executeMaterial(1)" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-black text-xs py-2.5 rounded-xl transition tracking-wide mt-2">⚡️ Bajarish (Taymerni Yoqish)</button>
             </div>
         </div>
 
@@ -80,11 +84,15 @@
             <button id="b2-start-btn" onclick="openBlockContent(2)" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition shadow-lg shadow-purple-600/20">Blokni Boshlash</button>
 
             <div id="b2-content" class="hidden mt-4 pt-3 border-t border-slate-800 space-y-3">
-                <p id="b2-text" class="text-xs text-slate-300 leading-relaxed bg-slate-950/40 p-2.5 rounded-xl border border-slate-800/60"></p>
+                <p class="text-[11px] font-bold text-purple-400 uppercase">📋 Ushbu blokda bajariladigan barcha ishlar:</p>
                 
+                <div id="b2-tasks-container" class="space-y-2 text-xs text-slate-300 leading-relaxed">
+                    </div>
+                
+                <p class="text-[11px] font-bold text-slate-400 uppercase mt-2">🔗 Ishlatiladigan barcha resurslar (Ustiga bosing):</p>
                 <div id="b2-links-container" class="space-y-2"></div>
                 
-                <button id="b2-action-btn" onclick="executeMaterial(2)" class="w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 text-white font-black text-xs py-2.5 rounded-xl transition tracking-wide">⚡️ Taymerni Yoqish va Boshlash</button>
+                <button id="b2-action-btn" onclick="executeMaterial(2)" class="w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white font-black text-xs py-2.5 rounded-xl transition tracking-wide mt-2">⚡️ Bajarish (Taymerni Yoqish)</button>
             </div>
         </div>
 
@@ -100,19 +108,23 @@
             <button id="b3-start-btn" onclick="openBlockContent(3)" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition shadow-lg shadow-emerald-600/20">Blokni Boshlash</button>
 
             <div id="b3-content" class="hidden mt-4 pt-3 border-t border-slate-800 space-y-3">
-                <p id="b3-text" class="text-xs text-slate-300 leading-relaxed bg-slate-950/40 p-2.5 rounded-xl border border-slate-800/60"></p>
+                <p class="text-[11px] font-bold text-emerald-400 uppercase">📋 Ushbu blokda bajariladigan barcha ishlar:</p>
                 
-                <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 flex justify-between items-center gap-3 text-xs">
+                <div id="b3-tasks-container" class="space-y-2 text-xs text-slate-300 leading-relaxed">
+                    </div>
+
+                <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 flex justify-between items-center gap-3 text-xs my-2">
                     <div class="truncate">
                         <span class="text-[9px] uppercase font-bold text-emerald-400 block tracking-wider">🤖 AI Ovozli Prompt:</span>
                         <span class="text-slate-400 italic">"I want to practice my English speaking..."</span>
                     </div>
                     <button onclick="copyPromptText()" class="bg-emerald-600/20 hover:bg-emerald-600 text-emerald-400 hover:text-white font-bold px-3 py-1.5 rounded-lg border border-emerald-500/30 text-[10px] shrink-0 transition">Nusxa</button>
                 </div>
-
+                
+                <p class="text-[11px] font-bold text-slate-400 uppercase">🔗 Ishlatiladigan barcha resurslar (Ustiga bosing):</p>
                 <div id="b3-links-container" class="space-y-2"></div>
                 
-                <button id="b3-action-btn" onclick="executeMaterial(3)" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-xs py-2.5 rounded-xl transition tracking-wide">⚡️ Taymerni Yoqish va Boshlash</button>
+                <button id="b3-action-btn" onclick="executeMaterial(3)" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-black text-xs py-2.5 rounded-xl transition tracking-wide mt-2">⚡️ Bajarish (Taymerni Yoqish)</button>
             </div>
         </div>
 
@@ -133,87 +145,137 @@
         let sessionInterval = null;
         let currentActiveBlock = null;
 
-        // Barcha platformalar va yuklab olish havolalari bazasi
-        const linksDB = {
-            quizlet: [
-                { title: "🌐 Quizlet Rasmiy Sayti", url: "https://quizlet.com/" },
-                { title: "🤖 Quizlet Ilovasi (Android)", url: "https://play.google.com/store/apps/details?id=com.quizlet.quizletandroid" },
-                { title: "🍏 Quizlet Ilovasi (iOS)", url: "https://apps.apple.com/us/app/apple-podcasts/id525451387" }
-            ],
-            tandem: [
-                { title: "🤝 Tandem Rasmiy Sayti", url: "https://www.tandem.net/" },
-                { title: "🤖 Tandem Ilovasi (Android)", url: "https://play.google.com/store/apps/details?id=net.tandem" },
-                { title: "🍏 Tandem Ilovasi (iOS)", url: "https://apps.apple.com/us/app/tandem-language-exchange/id997185242" }
-            ],
-            podcasts: [
-                { title: "🎙️ BBC 6 Minute English Podkast", url: "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" },
-                { title: "🎧 Spotify Music & Podcasts", url: "https://play.google.com/store/apps/details?id=com.spotify.music" },
-                { title: "🤖 Google Podcasts (Android)", url: "https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts" },
-                { title: "🍏 Apple Podcasts (iOS)", url: "https://apps.apple.com/us/app/apple-podcasts/id525451387" }
-            ],
-            chatgpt: [
-                { title: "🤖 ChatGPT Ovozli Muloqot", url: "https://chatgpt.com" }
-            ]
+        // PDF Rejadagi barcha resurs va havolalar jamlanmasi
+        const resources = {
+            yt_tvseries: { title: "📺 Learn English with TV Series (YouTube)", url: "https://www.youtube.com/@LearnEnglishWithTVSeries" },
+            yt_marina: { title: "📺 Linguamarina Slang & Idioms (YouTube)", url: "https://www.youtube.com/@linguamarina" },
+            yt_lucy: { title: "📺 English with Lucy Grammatika (YouTube)", url: "https://www.youtube.com/@EnglishwithLucy" },
+            yt_teded: { title: "📺 TED-Ed Motivatsion Nutqlar (YouTube)", url: "https://www.youtube.com/@TEDEd" },
+            bbc_podcast: { title: "🎙️ BBC 6 Minute English Podkast Sayti", url: "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" },
+            google_podcasts: { title: "🤖 Google Podcasts (Android)", url: "https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts" },
+            spotify: { title: "🎧 Spotify Podcasts (Android/Web)", url: "https://play.google.com/store/apps/details?id=com.spotify.music" },
+            apple_podcasts: { title: "🍏 Apple Podcasts (iOS)", url: "https://apps.apple.com/us/app/apple-podcasts/id525451387" },
+            quizlet_web: { title: "🌐 Quizlet Rasmiy Sayti", url: "https://quizlet.com/" },
+            quizlet_and: { title: "🤖 Quizlet Ilovasi (Android)", url: "https://play.google.com/store/apps/details?id=com.quizlet.quizletandroid" },
+            quizlet_ios: { title: "🍏 Quizlet Ilovasi (iOS)", url: "https://apps.apple.com/us/app/quizlet-ai-flashcards/id546473125" },
+            tandem_web: { title: "🤝 Tandem Rasmiy Sayti", url: "https://www.tandem.net/" },
+            tandem_and: { title: "🤖 Tandem Ilovasi (Android)", url: "https://play.google.com/store/apps/details?id=net.tandem" },
+            tandem_ios: { title: "🍏 Tandem Ilovasi (iOS)", url: "https://apps.apple.com/us/app/tandem-language-exchange/id997185242" },
+            chatgpt: { title: "🤖 ChatGPT Shaxsiy AI Repetitor", url: "https://chatgpt.com" }
         };
 
-        // Haftalik kunlik darslar bazasi (PDF rejaga asoslangan)
+        // KUNLIK TO'LIQ REJA (Har bir kunda barcha vazifalar jamlangan)
         const weeklyDatabase = [
             { // Dushanba
-                b1: { text: "Grammatika va yangi so'zlarni Quizlet-ga yozib yodlang.", links: linksDB.quizlet },
-                b2: { text: "Learn English with TV Series kanalidan bugun 1 ta videoni diqqat bilan ko'ring.", links: [{ title: "📺 Learn English with TV Series (YouTube)", url: "https://www.youtube.com/@LearnEnglishWithTVSeries" }] },
-                b3: { text: "AI boti bilan dushanba kungi kinodagi voqealar haqida ovozli gaplashing.", links: linksDB.chatgpt }
+                b1: { 
+                    tasks: ["• Grammatika va zamonaviy iboralar (idioms, phrasal verbs) ustida ishlash.", "• O'rganilgan darslardan yangi so'zlarni Quizlet-ga kiritib yodlash."],
+                    links: [resources.yt_marina, resources.yt_lucy, resources.quizlet_web, resources.quizlet_and, resources.quizlet_ios]
+                },
+                b2: { 
+                    tasks: ["• Learn English with TV Series kanalidan bugungi video tahlilini ko'rish.", "• Haqiqiy jonli ingliz tili talaffuz va ohanglarini miyaga singdirish."],
+                    links: [resources.yt_tvseries]
+                },
+                b3: { 
+                    tasks: ["• Bugungi kino va iboralar tahlili mavzusida AI bilan erkin ovozli suhbat qurish.", "• Kamida 5-10 daqiqa to'xtovsiz gapirish amaliyotini o'tash."],
+                    links: [resources.chatgpt]
+                }
             },
             { // Seshanba
-                b1: { text: "Linguamarina kanali orqali Amerikadagi 10 ta eng yangi slangni o'rganing.", links: [{ title: "📺 Linguamarina Slang Video (YouTube)", url: "https://www.youtube.com/@linguamarina" }] },
-                b2: { text: "Qiziqarli erkin mavzuda xohlagan podkast platformangizdan audio tinglang.", links: linksDB.podcasts },
-                b3: { text: "Bugungi o'rganilgan barcha slanglarni AI bilan gaplashganda nutqqa qo'llang.", links: linksDB.chatgpt }
+                b1: { 
+                    tasks: ["• Linguamarina kanali orqali Amerikadagi eng top 10 ta slang va iboralarni o'rganish.", "• Quizlet flashcards orqali lug'at boyligini boyitish."],
+                    links: [resources.yt_marina, resources.quizlet_web]
+                },
+                b2: { 
+                    tasks: ["• Spotify, Google Podcasts yoki Apple Podcasts orqali erkin inglizcha podkast tinglash.", "• Native speaker nutq tezligi va aksentiga moslashish."],
+                    links: [resources.spotify, resources.google_podcasts, resources.apple_podcasts]
+                },
+                b3: { 
+                    tasks: ["• O'rganilgan yangi slang va iboralarni sun'iy intellekt (AI) bilan muloqotda jonli qo'llash.", "• Ovozli suhbat orqali xatolarni to'g'rilash."],
+                    links: [resources.chatgpt]
+                }
             },
             { // Chorshanba
-                b1: { text: "English with Lucy kanalidan eng kerakli talaffuz qoidalarini ko'rib chiqing.", links: [{ title: "📺 English with Lucy (YouTube)", url: "https://www.youtube.com/@EnglishwithLucy" }] },
-                b2: { text: "BBC 6 Minute English podkastini diqqat bilan eshiting va ohanglarni singdiring.", links: linksDB.podcasts },
-                b3: { text: "Eshitgan audiongizga taqlid qilib Shadowing (ortidan baland qaytarish) mashqini bajaring.", links: linksDB.chatgpt }
+                b1: { 
+                    tasks: ["• English with Lucy kanalidan talaffuz va murakkab grammatika darsini ko'rish.", "• Yangi qoidalarni daftarga qayd etish va Quizlet-ga kiritish."],
+                    links: [resources.yt_lucy, resources.quizlet_web]
+                },
+                b2: { 
+                    tasks: ["• BBC 6 Minute English podkastini to'liq va diqqat bilan eshitish.", "• Eshitish davomida yangi iboralarni kontekst orqali tushunish."],
+                    links: [resources.bbc_podcast, resources.spotify]
+                },
+                b3: { 
+                    tasks: ["• BBC podkastidagi mavzu yuzasidan AI bilan bahs-munozara qilish.", "• Eshitgan ohanglarga mukammal taqlid qilib Shadowing (baland ovozda qaytarish) mashqini qilish."],
+                    links: [resources.chatgpt]
+                }
             },
             { // Payshanba
-                b1: { text: "Haftalik barcha yangi so'zlarni Quizlet Flashcards yordamida to'liq qayta takrorlang.", links: linksDB.quizlet },
-                b2: { text: "TED-Ed kanalidan motivatsion yoki qiziqarli ilmiy qisqa videolarni eshiting.", links: [{ title: "📺 TED-Ed Podkastlar (YouTube)", url: "https://www.youtube.com/@TEDEd" }, ...linksDB.podcasts] },
-                b3: { text: "AI'ga 'Mening orzularim' mavzusini bering va 5 daqiqa to'xtamay inglizcha hikoya qiling.", links: linksDB.chatgpt }
+                b1: { 
+                    tasks: ["• Haftalik kiritilgan barcha yangi so'zlarni Quizlet ilovasi orqali to'liq takrorlash.", "• Flashcards va test rejimlaridan o'tib so'zlarni mustahkamlash."],
+                    links: [resources.quizlet_web, resources.quizlet_and, resources.quizlet_ios]
+                },
+                b2: { 
+                    tasks: ["• TED-Ed kanalidan qisqa, ilmiy va juda qiziqarli motivatsion nutqlarni eshitish.", "• Tinglash davomida notanish iboralarni aniqlash."],
+                    links: [resources.yt_teded, resources.bbc_podcast]
+                },
+                b3: { 
+                    tasks: ["• AI'ga bitta erkin mavzu berish (Masalan: 'Mening kelajakdagi maqsadlarim').", "• Ushbu mavzu bo'yicha sun'iy intellektga 5 daqiqa davomida to'xtamay inglizcha hikoya aytib berish."],
+                    links: [resources.chatgpt]
+                }
             },
             { // Juma
-                b1: { text: "Ertangi debat uchun global mavzuda (Masalan: 'AI xavflimi?') inglizcha argumentlar yig'ing.", links: linksDB.quizlet },
-                b2: { text: "Tanlangan mavzuga oid bahs va munozarali podkastlarni platformalardan topib eshiting.", links: linksDB.podcasts },
-                b3: { text: "AI bilan jonli ovozda murosasiz bahslashing (Debat rejimini yoqing).", links: linksDB.chatgpt }
+                b1: { 
+                    tasks: ["• Global va dolzarb biror mavzuda inglizcha fikrlar va argumentlar to'plash.", "• Bahs-munozaralar uchun kerakli lug'atlarni ko'rib chiqish."],
+                    links: [resources.quizlet_web, resources.yt_lucy]
+                },
+                b2: { 
+                    tasks: ["• Erkin tanlangan mavzuga mos keladigan munozarali podkastlarni platformalardan topib tinglash.", "• Nutqiy argumentlarni qanday tuzilishini eshitish."],
+                    links: [resources.spotify, resources.google_podcasts, resources.bbc_podcast]
+                },
+                b3: { 
+                    tasks: ["• Sun'iy intellekt (AI) bilan jonli ovozda murosasiz va qizg'in bahslashish (Debat rejimi).", "• O'z fikrini ingliz tilida dalillar bilan himoya qilishni o'rganish."],
+                    links: [resources.chatgpt]
+                }
             },
             { // Shanba
-                b1: { text: "Hafta davomida eng ko'p xato qilingan grammatik qoidalarni qayta ko'rib chiqing.", links: linksDB.quizlet },
-                b2: { text: "Chet ellik ona tili egalarining jonli nutqlarini podkastlarda tinglang.", links: linksDB.podcasts },
-                b3: { text: "Tandem ilovasi orqali chet ellik tengdoshlar bilan jonli audio muloqot quring.", links: linksDB.tandem }
+                b1: { 
+                    tasks: ["• Hafta davomida eng ko'p xato qilingan qoidalar va so'zlarni Quizlet-da qayta ko'rish.", "• Haftalik self-study yakuniy sarhisobini qilish."],
+                    links: [resources.quizlet_web]
+                },
+                b2: { 
+                    tasks: ["• Ona tili ingliz tili bo'lgan insonlarning jonli suhbatlarini podkastlarda eshitish.", "• Tabiiy nutq ohanglarini tushunishni mashq qilish."],
+                    links: [resources.spotify, resources.apple_podcasts]
+                },
+                b3: { 
+                    tasks: ["• Tandem yoki HelloTalk ilovalari orqali chet ellik tengdoshlar bilan jonli audio muloqot qurish.", "• O'rganilgan bilimlarni real insonlar bilan sinab ko'rish."],
+                    links: [resources.tandem_web, resources.tandem_and, resources.tandem_ios]
+                }
             },
-            { // Yakshanba
-                b1: { text: "Yangi dars yo'q. Faqat Quizlet'da 10 daqiqa ko'z yugurtiring.", links: linksDB.quizlet },
-                b2: { text: "O'zingizni mukofotlash uchun inglizcha subtitrdagi sevimli kinongizni tomosha qiling.", links: [{ title: "📺 YouTube Filmlar va Kinolar", url: "https://www.youtube.com" }] },
-                b3: { text: "Miyaga to'liq dam bering yoki erkin mavzuda AI bilan shunchaki suhbatlashing.", links: linksDB.chatgpt }
+            { // Yakshanba (Dam Olish Kuni)
+                b1: { tasks: ["• Yangi og'ir darslar yo'q. Faqat Quizlet'da 10 daqiqa ko'z yugurtiring."], links: [resources.quizlet_web] },
+                b2: { tasks: ["• O'zingizni mukofotlash uchun inglizcha subtitrdagi sevimli kinongizni tomosha qiling."], links: [{ title: "📺 YouTube Filmlar va Kinolar", url: "https://www.youtube.com" }] },
+                b3: { tasks: ["• Miyaga to'liq dam bering yoki erkin mavzuda AI bilan shunchaki do'stona suhbatlashing."], links: [resources.chatgpt] }
             }
         ];
 
         const textPlan = [
-            { title: "🎬 Dushanba: Kino va Seriallar", desc: "Learn English with TV Series tahlili va iboralar." },
-            { title: "🔥 Seshanba: Zamonaviy Slanglar", desc: "Linguamarina orqali Amerika slangi va podkastlar." },
-            { title: "🇬🇧 Chorshanba: Britaniya Talaffuzi", desc: "English with Lucy qoidalari va BBC podkast." },
-            { title: "📖 Payshanba: Kreativ Hikoya", desc: "Quizlet takrorlash va AI'ga to'xtovsiz hikoya." },
-            { title: "🗣 Juma: Debat va Munozara", desc: "Global mavzularda fikr yig'ish va AI bilan bahs." },
-            { title: "🤝 Shanba: Jonli Muloqot", desc: "Xatolar ustida ishlash va Tandem audio muloqot." },
-            { title: "🎉 Yakshanba: Dam Olish Kuni", desc: "Yangi dars yo'q! 10 daqiqa Quizlet va inglizcha kino." }
+            { title: "🎬 Dushanba: Kino va Seriallar Kuni", desc: "Learn English with TV Series tahlili, iboralar va Quizlet lug'at tizimi." },
+            { title: "🔥 Seshanba: Zamonaviy Slanglar Kuni", desc: "Linguamarina orqali Amerika slangi, erkin podkastlar va AI amaliyoti." },
+            { title: "🇬🇧 Chorshanba: Britaniya Talaffuzi Kuni", desc: "English with Lucy qoidalari, BBC 6 Minute podkasti va Shadowing." },
+            { title: "📖 Payshanba: Kreativ Hikoya Kuni", desc: "Quizlet takrorlash, TED-Ed motivatsion nutqlari va AI'ga 5 min to'xtovsiz hikoya." },
+            { title: "🗣 Juma: Debat va Munozara Kuni", desc: "Global argumentlar yig'ish, munozarali podkast va AI bilan jonli bahs." },
+            { title: "🤝 Shanba: Jonli Muloqot Kuni", desc: "Xatolar ustida ishlash va Tandem ilovasi orqali chet elliklar bilan audio suhbat." },
+            { title: "🎉 Yakshanba: Haftalik Dam Olish Kuni", desc: "Yangi og'ir dars yo'q! 10 daqiqa Quizlet va inglizcha subtitrli sevimli kino." }
         ];
 
-        // Bugungi kun indeksini topish (Dushanba-0 dan Yakshanba-6 gacha)
+        // Bugungi kun indeksini aniqlash (Dushanba-0 dan Yakshanba-6 gacha)
         const dayIdx = new Date().getDay() === 0 ? 6 : new Date().getDay() - 1;
         const todayData = weeklyDatabase[dayIdx];
 
-        // Sarlavha va kunlik maqsaddan "Yuklanmoqda..."ni o'chirish
+        // Yuklanmoqdani sarlavhadan darhol o'chirish
         document.getElementById('today-title').innerText = textPlan[dayIdx].title;
         document.getElementById('today-desc').innerText = textPlan[dayIdx].desc;
 
-        // 1. Umumiy kunlik global taymer
+        // 1. Global umumiy taymer
         setInterval(() => {
             globalSeconds++;
             let h = Math.floor(globalSeconds / 3600);
@@ -223,7 +285,7 @@
                 `${h < 10 ? '0'+h : h}:${m < 10 ? '0'+m : m}:${s < 10 ? '0'+s : s}`;
         }, 1000);
 
-        // 2. Blokni ochish va BARCHA tegishli havolalarni generatsiya qilish
+        // 2. Blokni ochish va BARCHA vazifalar hamda linklarni bir vaqtda chiqarish
         function openBlockContent(blockNum) {
             if (currentActiveBlock !== null) {
                 alert("Sizda hozir bajarilayotgan faol dars bloki bor!");
@@ -232,29 +294,40 @@
             
             const blockContent = document.getElementById(`b${blockNum}-content`);
             const startBtn = document.getElementById(`b${blockNum}-start-btn`);
+            const tasksContainer = document.getElementById(`b${blockNum}-tasks-container`);
             const linksContainer = document.getElementById(`b${blockNum}-links-container`);
             
             blockContent.classList.remove('hidden');
             startBtn.classList.add('hidden');
 
-            // Matnni joylash
-            document.getElementById(`b${blockNum}-text`).innerText = todayData[`b${blockNum}`].text;
+            // 1. O'sha blokning barcha vazifalarini ro'yxat qilib chiqarish
+            tasksContainer.innerHTML = "";
+            todayData[`b${blockNum}`].tasks.forEach(task => {
+                const pTask = document.createElement('p');
+                pTask.className = "mb-1 text-slate-300 font-medium";
+                pTask.innerText = task;
+                tasksContainer.appendChild(pTask);
+            });
             
-            // Havolalarni tozalab qayta generatsiya qilish (barcha linklar chiqadi)
+            // 2. O'sha blokning barcha havolalarini generatsiya qilish
             linksContainer.innerHTML = "";
             todayData[`b${blockNum}`].links.forEach(link => {
                 const aElement = document.createElement('a');
                 aElement.href = link.url;
                 aElement.target = "_blank";
-                aElement.className = "block bg-slate-950 hover:bg-slate-900 border border-slate-800 hover:border-blue-500/40 rounded-xl p-3 text-xs font-semibold text-slate-200 hover:text-white transition flex items-center justify-between";
-                aElement.innerHTML = `<span>${link.title}</span> <span class="text-slate-500 text-[10px]">Ochish ↗</span>`;
+                aElement.onclick = () => {
+                    // Link bosilganda avtomatik karta tanlangan holatga keladi
+                    aElement.classList.add('border-blue-500', 'bg-slate-900');
+                };
+                aElement.className = "block bg-slate-950 hover:bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs font-semibold text-slate-200 hover:text-white transition flex items-center justify-between";
+                aElement.innerHTML = `<span>${link.title}</span> <span class="text-blue-400 text-[10px]">Ochish ↗</span>`;
                 linksContainer.appendChild(aElement);
             });
 
             if (tg && tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
         }
 
-        // 3. Taymerni yoqish va jarayonni boshlash
+        // 3. Bajarish tugmasi bosilganda taymerni yoqish
         function executeMaterial(blockNum) {
             currentActiveBlock = blockNum;
             sessionSeconds = 0;
@@ -262,6 +335,7 @@
             let glowClass = blockNum === 1 ? 'neon-blue' : blockNum === 2 ? 'neon-purple' : 'neon-emerald';
             document.getElementById(`block${blockNum}`).classList.add(glowClass);
             document.getElementById(`b${blockNum}-badge`).innerText = "Bajarilmoqda... ⏳";
+            document.getElementById(`b${blockNum}-action-btn`).classList.add('hidden');
 
             document.getElementById('global-timer-panel').classList.remove('hidden');
             document.getElementById('timer-status-title').innerText = `${blockNum}-Blok Mashg'uloti`;
@@ -276,13 +350,13 @@
 
             if (tg && tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
             
-            // Birinchi asosiy havolani avtomatik ochish (qolganlari ro'yxatda ochiq turadi)
+            // Birinchi resursni yangi oynada avtomatik ochish
             setTimeout(() => {
                 window.open(todayData[`b${blockNum}`].links[0].url, '_blank');
             }, 150);
         }
 
-        // 4. Seansni yakunlash
+        // 4. Seansni butunlay yakunlash
         function stopCurrentSession() {
             clearInterval(sessionInterval);
             let bNum = currentActiveBlock;
@@ -296,20 +370,20 @@
             document.getElementById(`block${bNum}`).classList.remove(glowClass);
             document.getElementById(`b${bNum}-content`).classList.add('hidden');
 
-            alert(`Blok yakunlandi! Ushbu darsda ${totalMins} daqiqa shug'ullandingiz. 🔥`);
+            alert(`Blok muvaffaqiyatli yakunlandi! ${totalMins} daqiqa darsingiz tizimga yozildi. 🔥`);
             currentActiveBlock = null;
         }
 
         function copyPromptText() {
             const txt = "I want to practice my English speaking. Act as a friendly American native speaker. Chat with me on casual topics, correct my pronunciation or grammar mistakes gently after each turn, and ask follow-up questions to keep the conversation going.";
             navigator.clipboard.writeText(txt).then(() => {
-                alert("Prompt nusxalandi! AI botiga yuborishingiz mumkin. 🤖");
+                alert("Prompt muvaffaqiyatli nusxalandi! Uni ChatGPT ovozli rejimiga yuboring. 🤖");
             });
         }
 
         function runEmergencyRule() {
             if (confirm("Zanjirni saqlash uchun 5 ta oltin so'zni eslaymiz?")) {
-                alert("Consistency, Fluency, Focus, Practice, Loud Voice!\nKun muvaffaqiyatli saqlab qolindi.");
+                alert("Consistency, Fluency, Focus, Practice, Loud Voice!\nBugungi kun hisobga olindi.");
                 if (tg) tg.close();
             }
         }
